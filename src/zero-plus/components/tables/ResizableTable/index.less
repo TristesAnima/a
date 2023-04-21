@@ -1,0 +1,27 @@
+.main {
+  :global {
+    .react-resizable {
+      position: relative;
+    }
+
+    .react-resizable-handle {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-repeat: no-repeat;
+      background-origin: content-box;
+      box-sizing: border-box;
+      background-position: bottom right;
+      padding: 0 3px 3px 0;
+    }
+
+    .react-resizable-handle-e {
+      top: 50%;
+      margin-top: -10px;
+      cursor: ew-resize;
+      right: -10px;
+      transform: rotate(315deg);
+      z-index: 999;
+    }
+  }
+}

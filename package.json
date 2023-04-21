@@ -1,0 +1,106 @@
+{
+  "name": "CTMS",
+  "version": "0.1.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "prepare": "husky install",
+    "analyze": "cross-env ANALYZE=1 max build",
+    "build": "cross-env NODE_OPTIONS=--max_old_space_size=4096 max build",
+    "start": "max dev",
+    "lint": "npm run lint:js && npm run lint:style",
+    "lint:js": "eslint --fix --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src",
+    "lint:style": "stylelint --fix \"src/**/*.less\" --syntax less",
+    "i18n-transform": "node ./scripts/i18n/transform.js",
+    "eslint-html": "eslint -f html src > ./eslint.html"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn run lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.less": "stylelint --fix --syntax less",
+    "**/*.{js,jsx,ts,tsx}": "eslint --ext .js,.jsx,.ts,.tsx",
+    "**/*.{js,jsx,tsx,ts,less,json}": [
+      "prettier --write"
+    ]
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 10"
+  ],
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "dependencies": {
+    "@ahooksjs/use-url-state": "^3.0.0-alpha.4",
+    "@ant-design/icons": "^4.6.2",
+    "@ant-design/pro-components": "^2.3.13",
+    "@ant-design/pro-layout": "^6.38.22",
+    "@formily/antd": "^2.2.19",
+    "@formily/core": "^2.2.19",
+    "@formily/react": "^2.2.19",
+    "@stomp/stompjs": "^6.1.2",
+    "@umijs/preset-dumi": "^1.1.30",
+    "@umijs/route-utils": "^2.0.4",
+    "ahooks": "^3.0.0-alpha.17",
+    "antd": "^4.16.7",
+    "axios": "0.21.1",
+    "braft-editor": "^2.3.9",
+    "classnames": "2.3.1",
+    "cross-env": "^7.0.3",
+    "cross-port-killer": "^1.3.0",
+    "crypto-js": "4.0.0",
+    "immer": "^9.0.5",
+    "less": "^4.1.1",
+    "lodash": "^4.17.21",
+    "mammoth": "1.4.17",
+    "moment": "^2.29.1",
+    "prop-types": "^15.7.2",
+    "pubsub-js": "^1.9.3",
+    "qs": "^6.11.0",
+    "react": "17.0.2",
+    "react-contextmenu": "^2.14.0",
+    "react-dnd": "^16.0.1",
+    "react-dnd-html5-backend": "^16.0.1",
+    "react-dom": "17.0.2",
+    "react-resizable": "^3.0.4",
+    "react-sortable-hoc": "^2.0.0",
+    "resumablejs": "1.1.0",
+    "sockjs-client": "1.5.1",
+    "stompjs": "2.3.3",
+    "uuid": "^9.0.0",
+    "zustand": "^4.1.5"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "7.14.7",
+    "@babel/plugin-proposal-optional-chaining": "7.14.5",
+    "@types/lodash": "^4.14.191",
+    "@types/pubsub-js": "^1.8.3",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@types/react-resizable": "^3.0.3",
+    "@umijs/fabric": "^3.0.0",
+    "@umijs/max": "4.0.30",
+    "cross-env": "7.0.3",
+    "cross-port-killer": "1.4.0",
+    "eslint": "7.30.0",
+    "eslint-config-airbnb": "18.2.1",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-compat": "3.9.0",
+    "eslint-plugin-eslint-comments": "3.2.0",
+    "eslint-plugin-import": "2.23.4",
+    "eslint-plugin-jsx-a11y": "6.4.1",
+    "eslint-plugin-react": "7.24.0",
+    "eslint-plugin-react-hooks": "4.2.0",
+    "husky": "^7.0.0",
+    "less": "4.1.3",
+    "lint-staged": "11.0.1",
+    "mockjs": "1.1.0",
+    "prettier": "2.8.1",
+    "stylelint": "13.13.1",
+    "typescript": "^4.9.5"
+  }
+}

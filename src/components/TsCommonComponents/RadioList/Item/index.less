@@ -1,0 +1,24 @@
+@import '~antd/lib/style/themes/default.less';
+
+.checked-list-item {
+  margin: 4px 0;
+  padding: 4px;
+  color: @text-color;
+  border-radius: @border-radius-base;
+  cursor: pointer;
+  transition: all 0.3s;
+  &:hover {
+    color: @primary-color;
+    background: @primary-1;
+  }
+  &.active:hover {
+    color: @primary-color;
+    font-weight: bold;
+    background: @primary-1;
+  }
+  &.active {
+    color: @primary-color;
+    font-weight: bold;
+    background: @primary-1;
+  }
+}

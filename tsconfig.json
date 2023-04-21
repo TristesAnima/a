@@ -1,0 +1,6 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+  },
+  "extends": "./src/.umi/tsconfig.json",
+}
